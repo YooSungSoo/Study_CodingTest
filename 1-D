@@ -1,0 +1,42 @@
+// 백준 10988번 팰린드롬인지 확인하기(브론즈3)
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+/*
+string str;
+int a=0;
+int main(void){
+	
+	cin >> str;
+	a = str.length()/2;
+	
+	if(str.length()%2==0){
+		reverse(str.begin(),str.begin()+a);
+		if(str.substr(0,a)==str.substr(a,str.length())){
+			cout << "1";	
+		}else cout << "0";
+	}
+	else if(str.length()%2==1){
+		reverse(str.begin(),str.begin()+a);
+		if(str.substr(0,a)==str.substr(a+1,str.length())){
+			cout << "1";
+		}else cout << "0";
+	}
+	return 0;
+} 
+*/
+string str,temp;
+
+int main(void){
+	
+	cin >> str;
+	temp = str;
+	reverse(str.begin(),str.end());
+	if(temp==str) cout << 1;
+	else cout<< 0;
+	
+	return 0;
+	
+} 
