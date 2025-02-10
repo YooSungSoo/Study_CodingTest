@@ -1,0 +1,33 @@
+// 백준 9996 한국이 그리울 땐 서버에 접속하지(실버3)
+// 반례 찾기 
+// string함수 익히기 str.find(), str.substr() 등 
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int n;
+string s, ori_s, pre, suf;
+
+int main(){
+
+	cin >> n;
+	cin >> ori_s;
+	
+	int pos = ori_s.find('*');
+	pre = ori_s.substr(0,pos);
+	suf = ori_s.substr(pos+1);
+	
+	for(int i=0;i<n;i++){
+		cin >> s;
+		if(pre.size() + suf.size() > s.size()){
+			cout << "Ne" << endl;
+		}
+		else{
+			if(pre == s.substr(0,pre.size()) && suf == s.substr(s.size()-suf.size()))
+				cout << "DA" << endl;
+			}
+			else cout << "NE" << endl;
+	}
+	return 0;
+} 
+ 
