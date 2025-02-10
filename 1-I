@@ -1,0 +1,34 @@
+// 백준 1620번 나는야 포켓몬 마스터 이다솜(실버4) 
+// atoi(s.c_str()) 함수 활용
+// 자료구조 map 활용 
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int n,m;
+string s;
+map<string,int> mp;
+map<int,string> mp2;
+string a[100004];
+ 
+int main(void){
+	  cin >> n >> m;
+	  for(int i=0;i<n;i++){
+	  	cin >> s;
+	  	mp[s] = i+1;
+	  	mp2[i+1] = s;
+	  	a[i+1] = s;
+	  }
+	  for(int i=0; i<m;i++){
+	  	cin >> s;
+	  	if(atoi(s.c_str())==0){
+	  		cout << mp[s] << endl;
+		  }else{
+		  	cout << mp2[atoi(s.c_str())] << endl;
+		  }
+	  }
+
+
+
+	return 0;
+}  
