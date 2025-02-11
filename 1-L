@@ -1,0 +1,31 @@
+//백준 1940번 주몽(실버4) 
+// 2개 3개 까지는 중첩 2중 for문으로 조합을 구현하라.
+  
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int n,m,cnt;
+int a[15004];
+
+int main(void){
+	
+	cin >>n >> m;
+	for(int i=0;i<n;i++) cin >> a[i];
+	
+	if(m>200000) cout << 0 << endl; // 예외처리가 가능하면 하는게 좋다 
+	else{
+		for(int i=0;i<n;i++){
+			for(int j=i+1;j<n;j++){
+				if(a[i] + a[j] == m) cnt++;
+			}
+		}
+		cout << cnt << endl;
+	} 
+	
+	
+	
+	return 0;
+}
+
+ 
