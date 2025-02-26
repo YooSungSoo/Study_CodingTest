@@ -1,0 +1,44 @@
+// 백준 4949번 균혁잡힌 세상(실버4)
+// 짝짓기는 뭐다? stack이다. 
+// 문자열을 받을 때 띄어쓰기가 있으면 cin이 아닌 getline을 써야한다. 
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+ 
+
+int main(void){
+	
+	while(true){
+		string s;
+		getline(cin, s);
+		if(s==".") break;
+		stack<int> stk; // 매번 stack을 초기화 해야함 
+		bool check = true;
+		for(int i=0;i<s.length();i++){
+			if(s[i]==')'){
+				if(stk.size()==0 || stk.top()=='['){
+				check = false;
+				break;
+			}else{
+				stk.pop();
+			}
+		} 
+		if(s[i]==']'){
+			if(stk.size()==0 || stk.top()== '('){
+				check = false;
+				break;
+			}else{
+				stk.pop();
+			}
+		}
+		if(s[i]=='(') stk.push(s[i]);
+		if(s[i]=='[') stk.push(s[i]);
+	} 
+	if(check && stk.size()==0) cout << "yes\n";
+	else cout << "no\n";
+	
+}
+return 0;
+} 
